@@ -1,6 +1,6 @@
 import tkinter as tk
 # from tkinter import ttk
-import ttkbootstrap as ttk                # you need to install it - pip install ttkbootstrap
+import ttkbootstrap as ttk                # you need to install it with - pip install ttkbootstrap
 
 def convert():
   mile_input = entry_int.get()
@@ -8,9 +8,9 @@ def convert():
   output_string.set(km_output)
 
 # window
-window = tk.Tk()
+window = ttk.Window(themename='journal')
 window.title('demo')
-window.geometry('300x150')
+window.geometry('350x250')
 
 # title
 title_label = ttk.Label(master=window, text='Miles to kilometers', font='Calibri 24 bold')
