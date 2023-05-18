@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
+import pprint
 
 def button_func():
   # get the content of the entry
@@ -8,6 +9,9 @@ def button_func():
   # update the label
   # label.config(text='I change the text label with this text')  # ou label.configure(text='text.....') ou
   label['text'] = entry_text
+  
+  # how to get the parameters of labels
+  pprint.pprint(label.configure())
 
 # window
 window = tk.Tk()
