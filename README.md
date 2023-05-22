@@ -11,3 +11,6 @@ https://anzeljg.github.io/rin2/book2/2405/docs/tkinter/index.html
 # pyhon tuto
 https://www.pythontutorial.net/
 
+
+# menu tk
+https://www.tutorialspoint.com/python/tk_menu.htm
