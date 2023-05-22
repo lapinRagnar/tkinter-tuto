@@ -3,10 +3,20 @@ from tkinter import ttk
 
 # window
 window = tk.Tk()
-window.geometry('600x400+500+200')                # geometry('widthxHeight+left+top')
+# window.geometry('600x400+500+200')                # geometry('widthxHeight+left+top')
 window.title('confgurer le window')
-
 window.iconbitmap('img/favicon.ico')
+
+# exercice - start the window at the middle of the screen
+window_width = 800
+window_height = 600
+display_width = window.winfo_width()
+display_height = window.winfo_height()
+
+left = int(display_width/2 - display_width/2)
+top = int(display_height/2 - display_height/2)
+
+window.geometry(f'{window_width}x{window_height}+{left}+{top}')
 
 # window sizes
 window.minsize(200, 100)
