@@ -22,9 +22,10 @@ window.columnconfigure(1, weight=1)
 window.columnconfigure(2, weight=2)
 
 window.rowconfigure(0, weight=1)
+window.rowconfigure(1, weight=1)
 
 label1.grid(row=0, column=1, sticky='nsew')
-label2.grid(row=0, column=0, sticky='nsew')
+label2.grid(row=1, column=1, columnspan=2, sticky='nsew')
 
 # run
 window.mainloop()
