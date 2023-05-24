@@ -14,10 +14,10 @@ label3 = ttk.Label(master=window, text='last of the label', background='#07ded7'
 button = ttk.Button(window, text='button')
 
 # layout
-label1.pack(side='top', fill='both', ipady=50, padx=60)
-label2.pack(side='top', expand=True)
+label1.pack(side='left', expand=True, fill='both')
+label2.pack(side='top', expand=True, fill='both')
 label3.pack(side='top', expand=True, fill='both')
-button.pack(side='top', fill='x')
+button.pack(side='top', expand=True, fill='both')
 
 
 # run
