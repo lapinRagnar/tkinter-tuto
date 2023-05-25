@@ -8,6 +8,8 @@ class Segment(ttk.Frame):
     # grid layout
     self.rowconfigure(0, weight=1, uniform='a')
     self.columnconfigure((0, 1, 2), weight=1, uniform='a')
+    
+    # widgets
     ttk.Label(self, text=label_text).grid(row=0, column=0, sticky='nsew')
     ttk.Button(self, text=button_text).grid(row=0, column=1, sticky='nsew')
     
