@@ -1,0 +1,66 @@
+import tkinter as tk
+from tkinter import ttk
+from random import randint, choice
+
+# setup
+window = tk.Tk()
+window.title('scrolling with canvas')
+window.geometry('600x400')
+window.bind('<Escape>', lambda e: window.quit())
+
+""" # canvas 
+canvas = tk.Canvas(window, bg='white', scrollregion=(0, 0, 2000, 5000))
+canvas.create_line(0, 0, 2000, 5000, fill='green', width=10)
+for i in range(100):
+  l = randint(0, 2000)
+  t = randint(0, 5000)
+  r = l + randint(10, 500)
+  b = t + randint(10, 500)
+  color = choice(('red', 'green', 'blue', 'purple', 'yellow', 'orange', 'black', 'pink'))
+  canvas.create_rectangle(l, t, r, b, fill=color)
+canvas.pack()
+
+# scroll bar 
+scrollbar = ttk.Scrollbar(window, orient='vertical', command=canvas.yview)
+canvas.configure(yscrollcommand=scrollbar.set)
+scrollbar.place(relx=1, rely=0, relheight=1, anchor='ne')
+
+# mousewheel scroling
+canvas.bind('<MouseWheel>', lambda e: canvas.yview_scroll(int(e.delta/60), 'units'))
+
+# exercice scrollbar horizontal
+scrollbar_botton = ttk.Scrollbar(window, orient='horizontal', command=canvas.xview)
+canvas.configure(xscrollcommand=scrollbar_botton.set)
+scrollbar_botton.place(relx=0, rely=1, relwidth=1, anchor='sw')
+
+# add an event to scroll left/right and ctrl + mousewheel
+canvas.bind('<ControlMouse>', lambda e: canvas.xview_scroll(int(e.delta/60), 'units'))
+
+# text
+text = tk.Text(window)
+for i in range(1, 200):
+  text.insert(f'{i}.0', f'mon text{i} \n')
+text.pack(expand=True, fill='both')
+
+scrollbar_text = ttk.Scrollbar(window, orient='vertical', command=text.yview)
+text.configure(yscrollcommand=scrollbar_text.set)
+scrollbar_text.place(relx=1, rely=0, relheight=1, anchor='ne') """
+
+# treeview
+table = ttk.Treeview(window, columns=(1, 2), show='headings')
+table.heading(1, text='first name')
+table.heading(2, text='last name')
+first_names = ['bob', 'Maria', 'James', 'Susan', 'Henry', 'Lisa', 'Anna', 'Lisa'] 
+last_names = ['Smith', 'Brown', 'Wilson', 'Thomson', 'Cook', 'Taylor', 'Walker', 'Clark'] 
+
+for i in range(100):
+  table.insert(parent='', index=tk.END, values=(choice(first_names), choice(last_names)))
+
+table.pack(expand=True, fill='both')
+
+scrollbar_table = ttk.Scrollbar(window, orient='vertical', command=table.yview)
+table.configure(yscrollcommand=scrollbar_table.set)
+scrollbar_table.place(relx=1, rely=0, relheight=1, anchor='ne') 
+
+# run window
+window.mainloop()
