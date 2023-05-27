@@ -3,6 +3,7 @@ import ttkbootstrap as ttk
 from ttkbootstrap.scrolled import ScrolledFrame
 from ttkbootstrap.toast import ToastNotification
 from ttkbootstrap.tooltip import ToolTip
+from ttkbootstrap.widgets import DateEntry
 
 # window
 window = ttk.Window(themename='darkly')
@@ -31,6 +32,12 @@ ttk.Button(window, text='afficher le toast', command=toast.show_toast).pack(pady
 button = ttk.Button(window, text='tooltip button', bootstyle='success')
 button.pack(pady=10)
 ToolTip(button, text='ceci est mon tooltip message', bootstyle='danger-inverse')
+
+# calendar
+calendar = DateEntry(window)
+calendar.pack(pady=10)
+ttk.Button(window, text='get calendar date', command=lambda: print(calendar.entry.get())).pack(pady=10)
+
 
   
 # run
