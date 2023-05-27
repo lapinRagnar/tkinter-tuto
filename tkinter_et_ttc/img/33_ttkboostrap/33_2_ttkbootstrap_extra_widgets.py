@@ -1,9 +1,10 @@
 import tkinter as tk
 import ttkbootstrap as ttk
+from ttkbootstrap.constants import *
 from ttkbootstrap.scrolled import ScrolledFrame
 from ttkbootstrap.toast import ToastNotification
 from ttkbootstrap.tooltip import ToolTip
-from ttkbootstrap.widgets import DateEntry
+from ttkbootstrap.widgets import DateEntry, Floodgauge
 
 # window
 window = ttk.Window(themename='darkly')
@@ -38,7 +39,17 @@ calendar = DateEntry(window)
 calendar.pack(pady=10)
 ttk.Button(window, text='get calendar date', command=lambda: print(calendar.entry.get())).pack(pady=10)
 
-
+# progress bar -> floodgauge
+progress_int = tk.IntVar(value=50)
+progress = Floodgauge(
+  window, 
+  text="bar d'avancement", 
+  variable=progress_int, 
+  bootstyle='danger', 
+  mask='mon progression {}%'
+  )
+progress.pack(fill='x')
+ttk.Scale(window, from_=0, to=100, variable=progress_int).pack()
   
 # run
 window.mainloop()
