@@ -2,6 +2,7 @@ import tkinter as tk
 import ttkbootstrap as ttk
 from ttkbootstrap.scrolled import ScrolledFrame
 from ttkbootstrap.toast import ToastNotification
+from ttkbootstrap.tooltip import ToolTip
 
 # window
 window = ttk.Window(themename='darkly')
@@ -25,6 +26,12 @@ toast = ToastNotification(
   )
   
 ttk.Button(window, text='afficher le toast', command=toast.show_toast).pack(pady=50)
+
+# tooltip
+button = ttk.Button(window, text='tooltip button', bootstyle='success')
+button.pack(pady=10)
+ToolTip(button, text='ceci est mon tooltip message', bootstyle='danger-inverse')
+
   
 # run
 window.mainloop()
